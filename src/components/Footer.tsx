@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="text-center">
           <div className="text-2xl font-bold text-white mb-4">
             <span className="text-neonGreen">&lt;</span>
-            John
+            Tushar
             <span className="text-neonGreen">/&gt;</span>
           </div>
           
@@ -24,7 +24,7 @@ const Footer = () => {
           <p className="text-gray-400 flex items-center justify-center">
             &copy; {currentYear} - Designed & Built with 
             <Heart className="h-4 w-4 text-neonGreen mx-1 animate-pulse" /> 
-            by John Doe
+            by Tushar Singh
           </p>
         </div>
       </div>

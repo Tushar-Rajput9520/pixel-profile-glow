@@ -66,7 +66,7 @@ const Hero = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-10">
           <div className="w-full md:w-1/2 text-center md:text-left">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-              <span className="block mb-2">Hi, I'm <span className="text-neonGreen glow-text">John Doe</span>,</span>
+              <span className="block mb-2">Hi, I'm <span className="text-neonGreen glow-text">Tushar Singh</span>,</span>
               <span className="block">a passionate 
                 <span className="relative px-2">
                   <span className="relative z-10">Web Developer</span>
@@ -101,7 +101,7 @@ const Hero = () => {
               <div className="absolute inset-2 overflow-hidden rounded-full border-2 border-neonGreen/50 bg-gradient-to-br from-midnight to-secondary">
                 <img
                   src="/lovable-uploads/bc506d33-65ff-45e2-a8bf-d04a6fe717a3.png"
-                  alt="John Doe"
+                  alt="Tushar Singh"
                   className="w-full h-full object-cover object-center"
                 />
               </div>
