@@ -100,7 +100,7 @@ const Hero = () => {
               <div className="absolute inset-0 rounded-full bg-neonGreen/20 blur-xl animate-pulse-green"></div>
               <div className="absolute inset-2 overflow-hidden rounded-full border-2 border-neonGreen/50 bg-gradient-to-br from-midnight to-secondary">
                 <img
-                  src="/lovable-uploads/9d659cc8-5d72-4abf-9523-9b076bb430dc.png"
+                  src="/lovable-uploads/7af74b4c-26f2-4a94-9ab6-4d4ab6687dfb.png"
                   alt="Tushar Singh"
                   className="w-full h-full object-cover object-center"
                 />
