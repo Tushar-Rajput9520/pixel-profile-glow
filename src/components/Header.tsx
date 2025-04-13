@@ -46,7 +46,7 @@ const Header = () => {
         {/* Desktop Navigation */}
         <nav className="hidden md:block">
           <ul className="flex space-x-8">
-            {['about', 'skills', 'projects', 'contact'].map((item) => (
+            {['about', 'skills', 'projects', 'resume', 'contact'].map((item) => (
               <li key={item}>
                 <button
                   onClick={() => scrollToSection(item)}
@@ -72,7 +72,7 @@ const Header = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-midnight/95 backdrop-blur-sm">
           <ul className="py-4 px-4 space-y-4">
-            {['about', 'skills', 'projects', 'contact'].map((item) => (
+            {['about', 'skills', 'projects', 'resume', 'contact'].map((item) => (
               <li key={item}>
                 <button
                   onClick={() => scrollToSection(item)}

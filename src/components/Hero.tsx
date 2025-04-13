@@ -82,8 +82,11 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mt-8">
               <Button 
                 className="bg-neonGreen text-midnight hover:bg-neonGreen/80 font-medium py-6 px-6 rounded-full"
+                asChild
               >
-                <Download className="mr-2 h-5 w-5" /> Download Resume
+                <a href="/resume.pdf" download="Tushar_Singh_Resume.pdf">
+                  <Download className="mr-2 h-5 w-5" /> Download Resume
+                </a>
               </Button>
               <Button 
                 variant="outline" 
