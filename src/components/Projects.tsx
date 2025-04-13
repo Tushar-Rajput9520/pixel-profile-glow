@@ -1,7 +1,8 @@
-
 import React from 'react';
 import { ExternalLink, Github } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
+import { Skeleton } from '@/components/ui/skeleton';
 
 interface Project {
   id: number;
@@ -47,11 +48,22 @@ const Projects = () => {
       title: 'Zara AI Assistant',
       description: 'An intelligent conversational AI assistant with natural language processing, context awareness, and personalized interaction capabilities.',
       techStack: ['OpenAI', 'React', 'TypeScript', 'Node.js', 'WebSockets'],
-      image: 'https://images.unsplash.com/photo-1677442135394-changed-to-AI-image?q=80&w=2000&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=2070&auto=format&fit=crop',
       demoUrl: '#',
       githubUrl: '#',
     },
   ];
+
+  const [loadedImages, setLoadedImages] = React.useState<{[key: number]: boolean}>({});
+
+  const handleImageLoad = (id: number) => {
+    setLoadedImages(prev => ({...prev, [id]: true}));
+  };
+
+  const handleImageError = (id: number) => {
+    console.error(`Failed to load image for project ${id}`);
+    // Keep the failed status as not loaded so the skeleton continues to show
+  };
 
   return (
     <section id="projects" className="py-20 bg-midnight relative overflow-hidden">
@@ -73,10 +85,15 @@ const Projects = () => {
             >
               <div className="relative h-64 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-t from-midnight via-transparent to-transparent z-10"></div>
+                {!loadedImages[project.id] && (
+                  <Skeleton className="w-full h-full absolute inset-0" />
+                )}
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ${loadedImages[project.id] ? 'opacity-100' : 'opacity-0'}`}
+                  onLoad={() => handleImageLoad(project.id)}
+                  onError={() => handleImageError(project.id)}
                 />
                 <div className="absolute bottom-4 left-4 z-20">
                   <h3 className="text-xl font-semibold text-white">{project.title}</h3>
