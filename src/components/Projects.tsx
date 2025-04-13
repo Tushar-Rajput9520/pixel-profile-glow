@@ -53,6 +53,33 @@ const Projects = () => {
       demoUrl: '#',
       githubUrl: '#',
     },
+    {
+      id: 5,
+      title: 'Digital Lock',
+      description: 'A secure digital lock interface with PIN pad, animation effects, and validation feedback. Includes customizable security settings.',
+      techStack: ['HTML', 'CSS', 'JavaScript'],
+      image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?q=80&w=2000&auto=format&fit=crop',
+      demoUrl: '#',
+      githubUrl: '#',
+    },
+    {
+      id: 6,
+      title: 'Movie Finder',
+      description: 'A movie recommendation platform that suggests films based on user preferences, genres, and ratings with a smooth, interactive UI.',
+      techStack: ['React', 'TMDb API', 'CSS', 'Axios'],
+      image: 'https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?q=80&w=2000&auto=format&fit=crop',
+      demoUrl: '#',
+      githubUrl: '#',
+    },
+    {
+      id: 7,
+      title: 'Image Changer',
+      description: 'An interactive image manipulation tool that allows users to apply filters, effects, and transformations to images in real-time.',
+      techStack: ['HTML', 'CSS', 'JavaScript', 'Canvas API'],
+      image: 'https://images.unsplash.com/photo-1487887235947-a955ef187fcc?q=80&w=2000&auto=format&fit=crop',
+      demoUrl: '#',
+      githubUrl: '#',
+    },
   ];
 
   const [loadedImages, setLoadedImages] = React.useState<{[key: number]: boolean}>({});
