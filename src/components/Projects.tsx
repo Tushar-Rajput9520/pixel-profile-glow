@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { ExternalLink, Github } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -39,7 +40,7 @@ const Projects = () => {
       title: 'Myntra Clone',
       description: 'A full-featured e-commerce platform replicating Myntra\'s design and functionality with responsive UI and comprehensive product catalog.',
       techStack: ['React', 'Redux', 'Firebase', 'Tailwind CSS'],
-      image: 'https://images.unsplash.com/photo-1593030159490-b2e0d3c5a959?q=80&w=2000&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2000&auto=format&fit=crop',
       demoUrl: '#',
       githubUrl: '#',
     },
