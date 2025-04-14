@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { ExternalLink, Github, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -23,6 +24,16 @@ const Projects = () => {
   const [openDialog, setOpenDialog] = useState(false);
   const [currentProject, setCurrentProject] = useState<Project | null>(null);
   const [dialogType, setDialogType] = useState<'demo' | 'code'>('demo');
+
+  const handleImageLoad = (id: number) => {
+    setLoadedImages(prev => ({ ...prev, [id]: true }));
+  };
+
+  const openProjectDialog = (project: Project, type: 'demo' | 'code') => {
+    setCurrentProject(project);
+    setDialogType(type);
+    setOpenDialog(true);
+  };
 
   const projects: Project[] = [
     {
@@ -291,4 +302,128 @@ const Projects = () => {
               '    # Open image with PIL\n' +
               '    img = Image.open(image_path)\n' +
               '    \n' +
-              '    # Apply different filters based on
+              '    # Apply different filters based on filter_type\n' +
+              '    if filter_type == "blur":\n' +
+              '        return img.filter(ImageFilter.BLUR)\n' +
+              '    elif filter_type == "contour":\n' +
+              '        return img.filter(ImageFilter.CONTOUR)\n' +
+              '    elif filter_type == "sharpen":\n' +
+              '        return img.filter(ImageFilter.SHARPEN)\n' +
+              '    elif filter_type == "emboss":\n' +
+              '        return img.filter(ImageFilter.EMBOSS)\n' +
+              '    elif filter_type == "grayscale":\n' +
+              '        return img.convert("L")\n' +
+              '    else:\n' +
+              '        return img  # Return original image'}
+            </pre>
+          </div>
+        </div>
+      ),
+      codeSnippet: '# Image Changer - Image Processing App\n\nimport os\nimport cv2\nimport numpy as np\nfrom PIL import Image, ImageFilter, ImageEnhance\nfrom flask import Flask, render_template, request, jsonify, send_file\n\napp = Flask(__name__)\napp.config["UPLOAD_FOLDER"] = "uploads"\napp.config["PROCESSED_FOLDER"] = "processed"\n\n# Create folders if they don\'t exist\nos.makedirs(app.config["UPLOAD_FOLDER"], exist_ok=True)\nos.makedirs(app.config["PROCESSED_FOLDER"], exist_ok=True)\n\n@app.route("/")\ndef index():\n    return render_template("index.html")\n\n@app.route("/upload", methods=["POST"])\ndef upload_file():\n    if "file" not in request.files:\n        return jsonify({"error": "No file part"}), 400\n        \n    file = request.files["file"]\n    if file.filename == "":\n        return jsonify({"error": "No selected file"}), 400\n        \n    # Save the uploaded file\n    filename = f"original_{file.filename}"\n    filepath = os.path.join(app.config["UPLOAD_FOLDER"], filename)\n    file.save(filepath)\n    \n    return jsonify({\n        "success": True,\n        "filename": filename,\n        "message": "File uploaded successfully"\n    })\n\n@app.route("/apply-filter", methods=["POST"])\ndef apply_filter():\n    data = request.get_json()\n    filename = data.get("filename")\n    filter_type = data.get("filter")\n    \n    if not filename or not filter_type:\n        return jsonify({"error": "Missing filename or filter type"}), 400\n    \n    input_path = os.path.join(app.config["UPLOAD_FOLDER"], filename)\n    output_filename = f"{filter_type}_{filename}"\n    output_path = os.path.join(app.config["PROCESSED_FOLDER"], output_filename)\n    \n    # Apply the filter\n    img = Image.open(input_path)\n    \n    if filter_type == "blur":\n        img = img.filter(ImageFilter.GaussianBlur(radius=5))\n    elif filter_type == "sharpen":\n        img = img.filter(ImageFilter.SHARPEN)\n    elif filter_type == "grayscale":\n        img = img.convert("L")\n    elif filter_type == "sepia":\n        # Apply sepia filter\n        img = img.convert("RGB")\n        w, h = img.size\n        pixels = img.load()\n        for i in range(w):\n            for j in range(h):\n                r, g, b = pixels[i, j]\n                tr = int(0.393 * r + 0.769 * g + 0.189 * b)\n                tg = int(0.349 * r + 0.686 * g + 0.168 * b)\n                tb = int(0.272 * r + 0.534 * g + 0.131 * b)\n                pixels[i, j] = (min(tr, 255), min(tg, 255), min(tb, 255))\n    elif filter_type == "invert":\n        if img.mode == "RGBA":\n            r, g, b, a = img.split()\n            rgb = Image.merge("RGB", (r, g, b))\n            inv = ImageOps.invert(rgb)\n            r2, g2, b2 = inv.split()\n            img = Image.merge("RGBA", (r2, g2, b2, a))\n        else:\n            img = ImageOps.invert(img)\n    \n    # Save the processed image\n    img.save(output_path)\n    \n    return jsonify({\n        "success": True,\n        "processed_image": f"/get-image/{output_filename}",\n        "filter": filter_type\n    })\n\n@app.route("/get-image/<filename>")\ndef get_image(filename):\n    folder = app.config["PROCESSED_FOLDER"] if filename.startswith(("blur_", "sharpen_", "grayscale_", "sepia_", "invert_")) else app.config["UPLOAD_FOLDER"]\n    return send_file(os.path.join(folder, filename))\n\nif __name__ == "__main__":\n    app.run(debug=True)',
+    }
+  ];
+
+  return (
+    <section id="projects" className="py-16 bg-midnight">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+          <span className="bg-gradient-to-r from-neonGreen to-blue-400 bg-clip-text text-transparent">My Projects</span>
+        </h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project) => (
+            <div 
+              key={project.id} 
+              className="bg-secondary rounded-lg overflow-hidden shadow-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-neonGreen/20"
+            >
+              <div className="relative">
+                <AspectRatio ratio={16/9}>
+                  {!loadedImages[project.id] && (
+                    <Skeleton className="absolute inset-0 h-full w-full" />
+                  )}
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="object-cover w-full h-full"
+                    onLoad={() => handleImageLoad(project.id)}
+                    style={{ opacity: loadedImages[project.id] ? 1 : 0 }}
+                  />
+                </AspectRatio>
+                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-midnight/90 to-transparent opacity-70"></div>
+              </div>
+              
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2 text-white">{project.title}</h3>
+                <p className="text-gray-300 mb-4">{project.description}</p>
+                
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.techStack.map((tech, index) => (
+                    <span 
+                      key={index} 
+                      className="bg-midnight text-neonGreen text-xs px-2 py-1 rounded"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                
+                <div className="flex justify-between items-center mt-4">
+                  <Button
+                    size="sm"
+                    variant="ghost"
+                    className="text-white hover:text-neonGreen"
+                    disabled={!project.codeSnippet}
+                    onClick={() => project.codeSnippet && openProjectDialog(project, 'code')}
+                  >
+                    <Github className="w-5 h-5 mr-1" />
+                    <span>View Code</span>
+                  </Button>
+                  
+                  <Button
+                    size="sm"
+                    variant="ghost"
+                    className="text-white hover:text-neonGreen"
+                    disabled={!project.demoContent}
+                    onClick={() => project.demoContent && openProjectDialog(project, 'demo')}
+                  >
+                    <ExternalLink className="w-5 h-5 mr-1" />
+                    <span>Live Demo</span>
+                  </Button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <Dialog open={openDialog} onOpenChange={setOpenDialog}>
+        <DialogContent className="sm:max-w-3xl">
+          <DialogHeader>
+            <DialogTitle className="flex items-center">
+              {currentProject?.title} {dialogType === 'code' ? 'Code' : 'Demo'}
+            </DialogTitle>
+            <DialogDescription>
+              {dialogType === 'code' ? 'Check out the source code' : 'Interactive demo preview'}
+            </DialogDescription>
+          </DialogHeader>
+          <DialogClose className="absolute right-4 top-4 text-gray-400 hover:text-white">
+            <X className="h-4 w-4" />
+            <span className="sr-only">Close</span>
+          </DialogClose>
+          
+          {dialogType === 'demo' && currentProject?.demoContent}
+          
+          {dialogType === 'code' && currentProject?.codeSnippet && (
+            <div className="bg-gray-900 p-4 rounded-lg">
+              <pre className="text-gray-300 text-sm overflow-x-auto">
+                {currentProject.codeSnippet}
+              </pre>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
+    </section>
+  );
+};
+
+export default Projects;
