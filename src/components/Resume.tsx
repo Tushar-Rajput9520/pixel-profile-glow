@@ -1,9 +1,14 @@
 
 import React from 'react';
-import { Download, Award, Briefcase, GraduationCap } from 'lucide-react';
+import { Download, Award, Briefcase, GraduationCap, ExternalLink, Code, Database } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { toast } from 'sonner';
 
 const Resume = () => {
+  const handleDownload = () => {
+    toast.success("Resume downloaded successfully!");
+  };
+
   return (
     <section id="resume" className="py-20 bg-gradient-to-b from-midnight to-midnight/95 relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(57,255,20,0.05),transparent_70%)]"></div>
@@ -77,6 +82,94 @@ const Resume = () => {
           </div>
         </div>
 
+        {/* Technical Skills Section - New */}
+        <div className="backdrop-blur-sm bg-card/20 rounded-xl p-6 border border-neonGreen/10 mb-12">
+          <div className="flex items-center mb-6">
+            <div className="p-3 rounded-full bg-neonGreen/10 mr-4">
+              <Code className="h-6 w-6 text-neonGreen" />
+            </div>
+            <h3 className="text-2xl font-bold">Technical Skills</h3>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h4 className="font-semibold mb-3 text-neonGreen">Programming Languages</h4>
+              <div className="flex flex-wrap gap-2">
+                {["Java", "Python", "JavaScript", "C", "SQL", "HTML", "CSS"].map((skill) => (
+                  <span key={skill} className="px-3 py-1 rounded-full bg-neonGreen/10 text-sm border border-neonGreen/20">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold mb-3 text-neonGreen">Databases</h4>
+              <div className="flex flex-wrap gap-2">
+                {["MySQL", "MongoDB"].map((skill) => (
+                  <span key={skill} className="px-3 py-1 rounded-full bg-neonGreen/10 text-sm border border-neonGreen/20">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold mb-3 text-neonGreen">AI/ML Frameworks</h4>
+              <div className="flex flex-wrap gap-2">
+                {["TensorFlow", "PyTorch", "scikit-learn"].map((skill) => (
+                  <span key={skill} className="px-3 py-1 rounded-full bg-neonGreen/10 text-sm border border-neonGreen/20">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold mb-3 text-neonGreen">Version Control</h4>
+              <div className="flex flex-wrap gap-2">
+                {["Git", "GitHub"].map((skill) => (
+                  <span key={skill} className="px-3 py-1 rounded-full bg-neonGreen/10 text-sm border border-neonGreen/20">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Coding Platforms Section - New */}
+        <div className="backdrop-blur-sm bg-card/20 rounded-xl p-6 border border-neonGreen/10 mb-12">
+          <div className="flex items-center mb-6">
+            <div className="p-3 rounded-full bg-neonGreen/10 mr-4">
+              <Database className="h-6 w-6 text-neonGreen" />
+            </div>
+            <h3 className="text-2xl font-bold">Coding Platforms</h3>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="p-4 rounded-lg bg-neonGreen/5 border border-neonGreen/20 flex items-center">
+              <div className="mr-3">
+                <ExternalLink className="h-5 w-5 text-neonGreen" />
+              </div>
+              <div>
+                <h4 className="font-semibold">LeetCode</h4>
+                <p className="text-sm text-gray-400">Solved 200+ Problems</p>
+              </div>
+            </div>
+            
+            <div className="p-4 rounded-lg bg-neonGreen/5 border border-neonGreen/20 flex items-center">
+              <div className="mr-3">
+                <ExternalLink className="h-5 w-5 text-neonGreen" />
+              </div>
+              <div>
+                <h4 className="font-semibold">GeeksforGeeks & InterviewBit</h4>
+                <p className="text-sm text-gray-400">Solved 150+ Problems</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Certifications Section */}
         <div className="backdrop-blur-sm bg-card/20 rounded-xl p-6 border border-neonGreen/10 mb-12">
           <div className="flex items-center mb-6">
@@ -86,18 +179,18 @@ const Resume = () => {
             <h3 className="text-2xl font-bold">Certifications</h3>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="p-4 rounded-lg bg-neonGreen/5 border border-neonGreen/20">
-              <h4 className="font-semibold mb-1">Web Development Fundamentals</h4>
-              <p className="text-sm text-gray-400">Udemy • 2023</p>
+              <h4 className="font-semibold mb-1">Mastering Data Structure and Algorithms</h4>
+              <p className="text-sm text-gray-400">Udemy</p>
             </div>
             <div className="p-4 rounded-lg bg-neonGreen/5 border border-neonGreen/20">
-              <h4 className="font-semibold mb-1">JavaScript Mastery</h4>
-              <p className="text-sm text-gray-400">Coursera • 2023</p>
+              <h4 className="font-semibold mb-1">C++</h4>
+              <p className="text-sm text-gray-400">Udemy</p>
             </div>
             <div className="p-4 rounded-lg bg-neonGreen/5 border border-neonGreen/20">
-              <h4 className="font-semibold mb-1">React Frontend Development</h4>
-              <p className="text-sm text-gray-400">FreeCodeCamp • 2022</p>
+              <h4 className="font-semibold mb-1">Graph Data Structure for CP</h4>
+              <p className="text-sm text-gray-400">Udemy</p>
             </div>
           </div>
         </div>
@@ -107,8 +200,9 @@ const Resume = () => {
           <Button 
             className="bg-neonGreen text-midnight hover:bg-neonGreen/80 font-medium py-6 px-8 rounded-full"
             asChild
+            onClick={handleDownload}
           >
-            <a href="/resume.pdf" download="Tushar_Singh_Resume.pdf">
+            <a href="/Tushar_Singh_Resume.pdf" download="Tushar_Singh_Resume.pdf">
               <Download className="mr-2 h-5 w-5" /> Download Full Resume
             </a>
           </Button>

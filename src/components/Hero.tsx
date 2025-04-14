@@ -67,11 +67,10 @@ const Hero = () => {
           <div className="w-full md:w-1/2 text-center md:text-left">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
               <span className="block mb-2">Hi, I'm <span className="text-neonGreen glow-text">Tushar Singh</span>,</span>
-              <span className="block">a passionate 
-                <span className="relative px-2">
-                  <span className="relative z-10">Web Developer</span>
+              <span className="block">a <span className="relative px-2">
+                  <span className="relative z-10">Passionate</span>
                   <span className="absolute bottom-0 left-0 h-3 w-full bg-neonGreen/20 -skew-x-12"></span>
-                </span>
+                </span> Web Developer
               </span>
               <span className="block mt-2">& Problem Solver</span>
             </h1>
@@ -84,7 +83,7 @@ const Hero = () => {
                 className="bg-neonGreen text-midnight hover:bg-neonGreen/80 font-medium py-6 px-6 rounded-full"
                 asChild
               >
-                <a href="/resume.pdf" download="Tushar_Singh_Resume.pdf">
+                <a href="/Tushar_Singh_Resume.pdf" download="Tushar_Singh_Resume.pdf">
                   <Download className="mr-2 h-5 w-5" /> Download Resume
                 </a>
               </Button>
