@@ -30,20 +30,27 @@ const Resume = () => {
               <div className="relative pl-8 border-l border-neonGreen/30">
                 <div className="absolute -left-1.5 top-0 h-3 w-3 rounded-full bg-neonGreen"></div>
                 <h4 className="text-lg font-semibold">Bachelor of Technology in Computer Science</h4>
-                <p className="text-gray-400">Indian Institute of Technology (IIT) • 2018 - 2022</p>
-                <p className="mt-2 text-gray-300">Graduated with honors. Specialized in full-stack development and machine learning.</p>
+                <p className="text-gray-400">Galgotias College of Engineering and Technology • 2022 - Present</p>
+                <p className="mt-2 text-gray-300">CGPA: 8.0</p>
               </div>
 
               <div className="relative pl-8 border-l border-neonGreen/30">
                 <div className="absolute -left-1.5 top-0 h-3 w-3 rounded-full bg-neonGreen"></div>
-                <h4 className="text-lg font-semibold">High School Diploma</h4>
-                <p className="text-gray-400">Delhi Public School • 2016 - 2018</p>
-                <p className="mt-2 text-gray-300">Top 5% of graduating class with focus on Mathematics and Computer Science.</p>
+                <h4 className="text-lg font-semibold">Higher Secondary (Class 12)</h4>
+                <p className="text-gray-400">Saraswati Vidya Mandir, CBSE • 2020 - 2021</p>
+                <p className="mt-2 text-gray-300">Percentage: 92.8%</p>
+              </div>
+              
+              <div className="relative pl-8 border-l border-neonGreen/30">
+                <div className="absolute -left-1.5 top-0 h-3 w-3 rounded-full bg-neonGreen"></div>
+                <h4 className="text-lg font-semibold">Secondary (Class 10)</h4>
+                <p className="text-gray-400">Zenith Public School, CBSE • 2018 - 2019</p>
+                <p className="mt-2 text-gray-300">Percentage: 90.4%</p>
               </div>
             </div>
           </div>
 
-          {/* Experience Section */}
+          {/* Experience Section - Updated to show current status */}
           <div className="backdrop-blur-sm bg-card/20 rounded-xl p-6 border border-neonGreen/10">
             <div className="flex items-center mb-6">
               <div className="p-3 rounded-full bg-neonGreen/10 mr-4">
@@ -55,16 +62,16 @@ const Resume = () => {
             <div className="space-y-8">
               <div className="relative pl-8 border-l border-neonGreen/30">
                 <div className="absolute -left-1.5 top-0 h-3 w-3 rounded-full bg-neonGreen"></div>
-                <h4 className="text-lg font-semibold">Senior Front-end Developer</h4>
-                <p className="text-gray-400">TechCorp Solutions • 2022 - Present</p>
-                <p className="mt-2 text-gray-300">Led front-end development for multiple client projects. Implemented responsive UI/UX designs and optimized web performance.</p>
+                <h4 className="text-lg font-semibold">Aspiring Web Developer</h4>
+                <p className="text-gray-400">Self-Learning • Present</p>
+                <p className="mt-2 text-gray-300">Currently focused on building personal projects and enhancing my skills in web development. Working on various personal projects to gain practical experience while continuously learning new technologies.</p>
               </div>
 
               <div className="relative pl-8 border-l border-neonGreen/30">
                 <div className="absolute -left-1.5 top-0 h-3 w-3 rounded-full bg-neonGreen"></div>
-                <h4 className="text-lg font-semibold">Web Development Intern</h4>
-                <p className="text-gray-400">InnovateTech • 2021 - 2022</p>
-                <p className="mt-2 text-gray-300">Collaborated on e-commerce platform development. Implemented responsive UI components and integrated payment gateways.</p>
+                <h4 className="text-lg font-semibold">Project-Based Learning</h4>
+                <p className="text-gray-400">Personal Portfolio • 2022 - Present</p>
+                <p className="mt-2 text-gray-300">Developing multiple web applications to build a diverse portfolio. Projects include a digital lock system, movie suggestion app, image changer, and other interactive web applications.</p>
               </div>
             </div>
           </div>
@@ -81,16 +88,16 @@ const Resume = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="p-4 rounded-lg bg-neonGreen/5 border border-neonGreen/20">
-              <h4 className="font-semibold mb-1">AWS Certified Developer</h4>
-              <p className="text-sm text-gray-400">Amazon Web Services • 2023</p>
+              <h4 className="font-semibold mb-1">Web Development Fundamentals</h4>
+              <p className="text-sm text-gray-400">Udemy • 2023</p>
             </div>
             <div className="p-4 rounded-lg bg-neonGreen/5 border border-neonGreen/20">
-              <h4 className="font-semibold mb-1">React Advanced Concepts</h4>
-              <p className="text-sm text-gray-400">Frontend Masters • 2022</p>
+              <h4 className="font-semibold mb-1">JavaScript Mastery</h4>
+              <p className="text-sm text-gray-400">Coursera • 2023</p>
             </div>
             <div className="p-4 rounded-lg bg-neonGreen/5 border border-neonGreen/20">
-              <h4 className="font-semibold mb-1">Full-Stack Web Development</h4>
-              <p className="text-sm text-gray-400">Udemy • 2021</p>
+              <h4 className="font-semibold mb-1">React Frontend Development</h4>
+              <p className="text-sm text-gray-400">FreeCodeCamp • 2022</p>
             </div>
           </div>
         </div>
