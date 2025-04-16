@@ -1,28 +1,28 @@
 
 import React from 'react';
-import { Code, BookOpen, Coffee, LightbulbIcon } from 'lucide-react';
+import { Code, BookOpen, Coffee, LightbulbIcon, Brain, CodeIcon } from 'lucide-react';
 
 const About = () => {
   const hobbies = [
     { 
       name: 'Coding', 
       icon: <Code className="h-6 w-6 text-neonGreen" />,
-      description: 'Always exploring new technologies' 
+      description: 'Passionate about solving complex problems' 
+    },
+    { 
+      name: 'Machine Learning', 
+      icon: <Brain className="h-6 w-6 text-neonGreen" />,
+      description: 'Exploring AI and ML technologies' 
     },
     { 
       name: 'Learning', 
       icon: <BookOpen className="h-6 w-6 text-neonGreen" />,
-      description: 'Continuous growth mindset' 
-    },
-    { 
-      name: 'Coffee', 
-      icon: <Coffee className="h-6 w-6 text-neonGreen" />,
-      description: 'Fuels my programming sessions' 
+      description: 'Continuous growth and skill development' 
     },
     { 
       name: 'Problem Solving', 
       icon: <LightbulbIcon className="h-6 w-6 text-neonGreen" />,
-      description: 'Finding elegant solutions' 
+      description: 'Analytical thinking and algorithmic approach' 
     }
   ];
 
@@ -41,18 +41,21 @@ const About = () => {
         <div className="max-w-4xl mx-auto">
           <div className="backdrop-blur-sm bg-card/30 p-8 rounded-xl shadow-lg border border-neonGreen/10 gradient-border">
             <p className="text-lg leading-relaxed mb-6 text-gray-200">
-              I'm a passionate web developer with a strong foundation in both front-end and back-end technologies. 
-              My journey began 5 years ago when I built my first website, and I've been hooked ever since. I'm constantly 
-              learning and exploring new technologies to stay at the cutting edge of web development.
+              As a recent Computer Science graduate, I'm an enthusiastic software developer with a strong foundation 
+              in programming and a burning passion for technology. My academic journey has equipped me with robust 
+              skills in Data Structures and Algorithms, and I'm currently diving deep into the exciting world of 
+              Machine Learning and Artificial Intelligence.
             </p>
             <p className="text-lg leading-relaxed mb-6 text-gray-200">
-              With a background in computer science and a keen eye for design, I bring a unique perspective to every project. 
-              I'm driven by the challenge of solving complex problems with clean, efficient code and creating intuitive 
-              user experiences that make technology more accessible.
+              I'm particularly fascinated by the transformative potential of AI and ML technologies. My current 
+              focus is on expanding my knowledge in machine learning frameworks, neural networks, and data science 
+              techniques. I'm committed to bridging the gap between theoretical knowledge and practical application, 
+              constantly seeking opportunities to apply cutting-edge technologies to real-world problems.
             </p>
             <p className="text-lg leading-relaxed text-gray-200">
-              Currently, I'm focused on mastering advanced React patterns, diving deeper into TypeScript, and exploring 
-              the capabilities of Next.js for building high-performance web applications.
+              Beyond technical skills, I bring a growth mindset, analytical thinking, and a collaborative spirit 
+              to every project. I'm excited to contribute my skills, learn from experienced professionals, and 
+              make meaningful contributions to innovative technological solutions.
             </p>
 
             <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-6">
