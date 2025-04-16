@@ -75,8 +75,10 @@ const Hero = () => {
               <span className="block mt-2">& Problem Solver</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-300 my-6">
-              I craft stunning websites and web applications that deliver exceptional user experiences.
-              Transforming ideas into reality through clean code and creative solutions.
+              With five years of dedicated experience, I specialize in crafting innovative web solutions 
+              that transform complex ideas into elegant, high-performance applications. My journey in 
+              programming is driven by a passion for solving challenging problems and creating 
+              user-centric digital experiences that make a meaningful impact.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mt-8">
               <Button 
