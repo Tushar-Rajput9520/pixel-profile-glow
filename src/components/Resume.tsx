@@ -74,9 +74,9 @@ const Resume = () => {
 
               <div className="relative pl-8 border-l border-neonGreen/30">
                 <div className="absolute -left-1.5 top-0 h-3 w-3 rounded-full bg-neonGreen"></div>
-                <h4 className="text-lg font-semibold">Project-Based Learning</h4>
-                <p className="text-gray-400">Personal Portfolio • 2022 - Present</p>
-                <p className="mt-2 text-gray-300">Developing multiple web applications to build a diverse portfolio. Projects include a digital lock system, movie suggestion app, image changer, and other interactive web applications.</p>
+                <h4 className="text-lg font-semibold">Data Structures and Algorithms</h4>
+                <p className="text-gray-400">Competitive Programming • 2022 - Present</p>
+                <p className="mt-2 text-gray-300">Solving complex algorithmic problems on platforms like LeetCode and GeeksforGeeks. Developed strong problem-solving skills through consistent practice with a focus on efficiency and optimization.</p>
               </div>
             </div>
           </div>
@@ -138,7 +138,7 @@ const Resume = () => {
           </div>
         </div>
 
-        {/* Coding Platforms Section - New */}
+        {/* Coding Platforms Section - Updated with links */}
         <div className="backdrop-blur-sm bg-card/20 rounded-xl p-6 border border-neonGreen/10 mb-12">
           <div className="flex items-center mb-6">
             <div className="p-3 rounded-full bg-neonGreen/10 mr-4">
@@ -154,7 +154,11 @@ const Resume = () => {
               </div>
               <div>
                 <h4 className="font-semibold">LeetCode</h4>
-                <p className="text-sm text-gray-400">Solved 200+ Problems</p>
+                <p className="text-sm text-gray-400">
+                  <a href="https://leetcode.com/u/tushar_rajput120/" target="_blank" rel="noopener noreferrer" className="hover:text-neonGreen">
+                    Solved 200+ Problems
+                  </a>
+                </p>
               </div>
             </div>
             
@@ -163,14 +167,18 @@ const Resume = () => {
                 <ExternalLink className="h-5 w-5 text-neonGreen" />
               </div>
               <div>
-                <h4 className="font-semibold">GeeksforGeeks & InterviewBit</h4>
-                <p className="text-sm text-gray-400">Solved 150+ Problems</p>
+                <h4 className="font-semibold">GeeksforGeeks</h4>
+                <p className="text-sm text-gray-400">
+                  <a href="https://www.geeksforgeeks.org/user/tusharsi48j2/" target="_blank" rel="noopener noreferrer" className="hover:text-neonGreen">
+                    Solved 150+ Problems
+                  </a>
+                </p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Certifications Section */}
+        {/* Certifications Section - Updated */}
         <div className="backdrop-blur-sm bg-card/20 rounded-xl p-6 border border-neonGreen/10 mb-12">
           <div className="flex items-center mb-6">
             <div className="p-3 rounded-full bg-neonGreen/10 mr-4">
@@ -185,11 +193,11 @@ const Resume = () => {
               <p className="text-sm text-gray-400">Udemy</p>
             </div>
             <div className="p-4 rounded-lg bg-neonGreen/5 border border-neonGreen/20">
-              <h4 className="font-semibold mb-1">C++</h4>
+              <h4 className="font-semibold mb-1">Java Programming</h4>
               <p className="text-sm text-gray-400">Udemy</p>
             </div>
             <div className="p-4 rounded-lg bg-neonGreen/5 border border-neonGreen/20">
-              <h4 className="font-semibold mb-1">Graph Data Structure for CP</h4>
+              <h4 className="font-semibold mb-1">Web Development Fundamentals</h4>
               <p className="text-sm text-gray-400">Udemy</p>
             </div>
           </div>

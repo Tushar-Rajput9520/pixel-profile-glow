@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Send, Linkedin, Github, Twitter, Mail, Phone } from 'lucide-react';
+import { Send, Linkedin, Github, Instagram, Mail, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -130,8 +130,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-medium text-white">Email</h4>
-                    <a href="mailto:tushar.singh@example.com" className="text-gray-300 hover:text-neonGreen transition-colors">
-                      tushar.singh@example.com
+                    <a href="mailto:tusharsinghkrj@gmail.com" className="text-gray-300 hover:text-neonGreen transition-colors">
+                      tusharsinghkrj@gmail.com
                     </a>
                   </div>
                 </div>
@@ -142,8 +142,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-medium text-white">Phone</h4>
-                    <a href="tel:+1234567890" className="text-gray-300 hover:text-neonGreen transition-colors">
-                      +1 (234) 567-890
+                    <a href="tel:+919520554564" className="text-gray-300 hover:text-neonGreen transition-colors">
+                      +91 9520554564
                     </a>
                   </div>
                 </div>
@@ -154,7 +154,7 @@ const Contact = () => {
               <h3 className="text-xl font-semibold mb-4 text-white">Connect With Me</h3>
               <div className="flex space-x-4">
                 <a 
-                  href="https://linkedin.com" 
+                  href="https://www.linkedin.com/in/tushar-singh-068426257/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="bg-neonGreen/10 hover:bg-neonGreen/20 p-3 rounded-full transition-colors"
@@ -162,7 +162,7 @@ const Contact = () => {
                   <Linkedin className="h-6 w-6 text-neonGreen" />
                 </a>
                 <a 
-                  href="https://github.com" 
+                  href="https://github.com/Tushar-Rajput9520" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="bg-neonGreen/10 hover:bg-neonGreen/20 p-3 rounded-full transition-colors"
@@ -170,12 +170,12 @@ const Contact = () => {
                   <Github className="h-6 w-6 text-neonGreen" />
                 </a>
                 <a 
-                  href="https://twitter.com" 
+                  href="https://instagram.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="bg-neonGreen/10 hover:bg-neonGreen/20 p-3 rounded-full transition-colors"
                 >
-                  <Twitter className="h-6 w-6 text-neonGreen" />
+                  <Instagram className="h-6 w-6 text-neonGreen" />
                 </a>
               </div>
             </div>

@@ -75,10 +75,11 @@ const Hero = () => {
               <span className="block mt-2">& Problem Solver</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-300 my-6">
-              With five years of dedicated experience, I specialize in crafting innovative web solutions 
-              that transform complex ideas into elegant, high-performance applications. My journey in 
-              programming is driven by a passion for solving challenging problems and creating 
-              user-centric digital experiences that make a meaningful impact.
+              As an aspiring software developer with a strong foundation in Data Structures and Algorithms, 
+              I'm passionate about creating efficient web solutions. My journey in programming is guided by 
+              a dedication to clean code principles and a curiosity to explore cutting-edge technologies. 
+              I excel at breaking down complex problems and implementing elegant solutions with a focus on 
+              performance and user experience.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mt-8">
               <Button 
