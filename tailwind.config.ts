@@ -53,7 +53,7 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				midnight: '#1A1F2C',
+				midnight: '#131B2C',
 				neonGreen: '#39FF14',
 			},
 			fontFamily: {
