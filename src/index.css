@@ -44,10 +44,25 @@
 
   body {
     @apply bg-background text-foreground font-poppins;
+    background: radial-gradient(circle at center, #101010 0%, #000000 100%);
+    background-attachment: fixed;
   }
 
   .code-backdrop {
     background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2339FF14' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    position: relative;
+  }
+
+  /* Advanced background effect for sections */
+  .code-backdrop::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(57, 255, 20, 0.03) 0%, transparent 80%);
+    pointer-events: none;
   }
 
   .glow-text {
@@ -77,7 +92,7 @@
   .progress-value {
     @apply absolute top-0 left-0 h-full bg-neonGreen rounded-full;
   }
-  
+
   /* Enhanced animations and effects */
   .glow-border {
     @apply relative;
@@ -111,9 +126,23 @@
   }
   
   .animated-gradient {
-    background: linear-gradient(-45deg, #000000, #1a1a1a, #0c1f0c, #132c13);
+    background: linear-gradient(-45deg, #000000, #0a0a0a, #0c1f0c, #132c13);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
+    position: relative;
+  }
+
+  /* Add subtle noise texture */
+  .animated-gradient::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%2339FF14' fill-opacity='0.07' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+    pointer-events: none;
   }
   
   @keyframes gradient {
@@ -130,6 +159,71 @@
   
   .text-outline {
     -webkit-text-stroke: 1px rgba(57, 255, 20, 0.3);
+  }
+
+  /* Matrix-like digital rain effect for background sections */
+  .digital-rain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.15;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .digital-rain-character {
+    position: absolute;
+    color: rgba(57, 255, 20, 0.7);
+    font-family: monospace;
+    font-size: 12px;
+    animation: digitalRain linear infinite;
+  }
+
+  @keyframes digitalRain {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(1000%);
+      opacity: 0;
+    }
+  }
+
+  /* Section background enhancements */
+  .section-bg {
+    position: relative;
+    background-color: #000;
+    overflow: hidden;
+  }
+  
+  .section-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(57, 255, 20, 0.2), transparent);
+  }
+  
+  .section-bg::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(57, 255, 20, 0.2), transparent);
   }
 }
 
@@ -150,6 +244,7 @@
   background: rgba(57, 255, 20, 0.5);
   pointer-events: none;
   animation: float-particle 10s infinite;
+  box-shadow: 0 0 10px 2px rgba(57, 255, 20, 0.3);
 }
 
 @keyframes float-particle {
@@ -187,4 +282,61 @@
 @keyframes blink-caret {
   from, to { border-color: transparent }
   50% { border-color: #39FF14 }
+}
+
+/* Enhanced background elements */
+.circuit-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg stroke='%2339FF14' stroke-width='1' stroke-opacity='0.05'%3E%3Cpath d='M20 0v80M40 0v80M60 0v80M80 0v80M0 20h80M0 40h80M0 60h80M0 80h80'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Holographic effect */
+.holographic {
+  position: relative;
+  overflow: hidden;
+}
+
+.holographic::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent 45%, rgba(57, 255, 20, 0.1) 50%, transparent 55%);
+  animation: holographicShine 3s linear infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes holographicShine {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Cyberpunk scan line effect */
+.scan-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, 
+    rgba(0, 0, 0, 0) 50%, 
+    rgba(0, 0, 0, 0.02) 50%);
+  background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 3;
+  opacity: 0.3;
 }
