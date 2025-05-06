@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -54,6 +55,7 @@ export default {
 				},
 				midnight: '#000000',
 				neonGreen: '#39FF14',
+				neonWhite: '#ffffff',
 				purple: {
 					400: '#9b87f5',
 					500: '#8B5CF6',
@@ -91,9 +93,9 @@ export default {
 					'90%': { opacity: '1' },
 					'100%': { transform: 'translateY(50px)', opacity: '0' },
 				},
-				'pulse-purple': {
-					'0%, 100%': { boxShadow: '0 0 0 0 rgba(155, 135, 245, 0.4)' },
-					'50%': { boxShadow: '0 0 0 10px rgba(155, 135, 245, 0)' },
+				'pulse-white': {
+					'0%, 100%': { boxShadow: '0 0 0 0 rgba(255, 255, 255, 0.4)' },
+					'50%': { boxShadow: '0 0 0 10px rgba(255, 255, 255, 0)' },
 				},
 			},
 			animation: {
@@ -102,7 +104,7 @@ export default {
 				'float': 'float 3s ease-in-out infinite',
 				'pulse-green': 'pulse-green 2s infinite',
 				'code-flow': 'code-flow 15s linear infinite',
-				'pulse-purple': 'pulse-purple 2s infinite',
+				'pulse-white': 'pulse-white 2s infinite',
 			},
 		}
 	},

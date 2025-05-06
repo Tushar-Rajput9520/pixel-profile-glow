@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -43,7 +44,7 @@
 
   body {
     @apply bg-background text-foreground font-poppins;
-    background: radial-gradient(ellipse at center, #101010 0%, #000000 100%);
+    background: #000000;
     background-attachment: fixed;
   }
 
@@ -52,15 +53,15 @@
     position: relative;
   }
   
-  /* Purple themed animated gradient background */
-  .animated-purple-gradient {
-    background: linear-gradient(-45deg, #0a0a0a, #1A1F2C, #2D1B4E, #1E133A);
+  /* Black animated gradient background */
+  .animated-black-gradient {
+    background: linear-gradient(-45deg, #000000, #0a0a0a, #111111, #080808);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
     position: relative;
   }
 
-  .animated-purple-gradient::after {
+  .animated-black-gradient::after {
     content: '';
     position: absolute;
     top: 0;
@@ -68,30 +69,30 @@
     width: 100%;
     height: 100%;
     opacity: 0.15;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%239b87f5' fill-opacity='0.07' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23ffffff' fill-opacity='0.07' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
     pointer-events: none;
   }
 
-  /* Enhanced animations and effects for purple theme */
-  .glow-text-purple {
-    text-shadow: 0 0 10px rgba(155, 135, 245, 0.5);
+  /* Enhanced animations and effects for black theme */
+  .glow-text-black {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
   }
   
-  .glow-border-purple {
+  .glow-border-black {
     @apply relative;
-    box-shadow: 0 0 15px rgba(155, 135, 245, 0.3);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
   }
   
-  .glow-border-purple::after {
+  .glow-border-black::after {
     content: '';
     @apply absolute inset-0 rounded-lg;
-    box-shadow: inset 0 0 8px rgba(155, 135, 245, 0.3);
+    box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.3);
     pointer-events: none;
   }
 
-  /* Circuit pattern background with purple theme */
-  .circuit-pattern-purple {
-    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg stroke='%239b87f5' stroke-width='1' stroke-opacity='0.05'%3E%3Cpath d='M20 0v80M40 0v80M60 0v80M80 0v80M0 20h80M0 40h80M0 60h80M0 80h80'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  /* Circuit pattern background with white accents */
+  .circuit-pattern-black {
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg stroke='%23ffffff' stroke-width='1' stroke-opacity='0.05'%3E%3Cpath d='M20 0v80M40 0v80M60 0v80M80 0v80M0 20h80M0 40h80M0 60h80M0 80h80'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     position: absolute;
     top: 0;
     left: 0;
@@ -102,41 +103,41 @@
     z-index: 0;
   }
 
-  /* Cyber grid with purple theme */
-  .cyber-grid-purple {
+  /* Cyber grid with white accents */
+  .cyber-grid-black {
     background-size: 50px 50px;
     background-image: 
-      linear-gradient(to right, rgba(155, 135, 245, 0.05) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(155, 135, 245, 0.05) 1px, transparent 1px);
+      linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
   }
 
-  /* Holographic effect with purple theme */
-  .holographic-purple {
+  /* Holographic effect with white accents */
+  .holographic-black {
     position: relative;
     overflow: hidden;
   }
 
-  .holographic-purple::before {
+  .holographic-black::before {
     content: '';
     position: absolute;
     top: -100%;
     left: -100%;
     width: 300%;
     height: 300%;
-    background: linear-gradient(45deg, transparent 45%, rgba(155, 135, 245, 0.1) 50%, transparent 55%);
+    background: linear-gradient(45deg, transparent 45%, rgba(255, 255, 255, 0.1) 50%, transparent 55%);
     animation: holographicShine 6s linear infinite;
     pointer-events: none;
     z-index: 2;
   }
 
-  /* Pulse animation with purple theme */
-  @keyframes pulse-purple {
-    '0%, 100%': { boxShadow: '0 0 0 0 rgba(155, 135, 245, 0.4)' },
-    '50%': { boxShadow: '0 0 0 10px rgba(155, 135, 245, 0)' },
+  /* Pulse animation with white accents */
+  @keyframes pulse-white {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); }
+    50% { box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
   }
 
-  .animate-pulse-purple {
-    animation: pulse-purple 2s infinite;
+  .animate-pulse-white {
+    animation: pulse-white 2s infinite;
   }
 
   .glow-text {
@@ -232,10 +233,10 @@
   }
   
   .text-outline {
-    -webkit-text-stroke: 1px rgba(57, 255, 20, 0.3);
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
   }
 
-  /* Matrix-like digital rain effect for background sections */
+  /* Matrix-like digital rain effect for background sections with white theme */
   .digital-rain {
     position: absolute;
     top: 0;
@@ -250,10 +251,10 @@
 
   .digital-rain-character {
     position: absolute;
-    color: rgba(57, 255, 20, 0.7);
+    color: rgba(255, 255, 255, 0.7);
     font-family: monospace;
     font-size: 16px;
-    text-shadow: 0 0 5px rgba(57, 255, 20, 0.5);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
     animation: digitalRain linear infinite;
   }
 
@@ -274,31 +275,131 @@
     }
   }
 
-  /* Section background enhancements */
-  .section-bg {
+  /* Floating particles animation with white theme */
+  .particle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    pointer-events: none;
+    animation: float-particle 10s infinite;
+    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.3);
+    z-index: 2;
+  }
+
+  @keyframes float-particle {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+      opacity: 0.3;
+    }
+    25% {
+      transform: translate(50px, -30px) scale(1.2);
+      opacity: 0.6;
+    }
+    50% {
+      transform: translate(100px, 0) scale(0.8);
+      opacity: 0.4;
+    }
+    75% {
+      transform: translate(50px, 30px) scale(1.1);
+      opacity: 0.5;
+    }
+  }
+
+  /* Code flow animation with white theme */
+  @keyframes code-flow-white {
+    0% { transform: translateY(0); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(50px); opacity: 0; }
+  }
+
+  .animate-code-flow-white {
+    animation: code-flow-white 15s linear infinite;
+  }
+
+  /* 3D Data grid animation */
+  .data-grid-3d {
     position: relative;
-    background-color: #000;
+    perspective: 1000px;
     overflow: hidden;
   }
-  
-  .section-bg::before {
+
+  .data-grid-3d::before {
     content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: 
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(0deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+    transform: rotateX(60deg);
+    animation: grid3d 20s linear infinite;
+  }
+
+  @keyframes grid3d {
+    0% { transform: rotateX(60deg) translateY(0); }
+    100% { transform: rotateX(60deg) translateY(50px); }
+  }
+
+  /* Electric spark animation */
+  .electric-spark {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .spark {
+    position: absolute;
+    width: 2px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 0 10px 1px white;
+    opacity: 0;
+    animation: spark 5s linear infinite;
+  }
+
+  @keyframes spark {
+    0% { opacity: 0; }
+    80% { opacity: 0; }
+    81% { opacity: 1; transform: scale(1); }
+    82% { opacity: 0; transform: scale(1.2); }
+    83% { opacity: 1; transform: scale(1); }
+    84% { opacity: 0; }
+    100% { opacity: 0; }
+  }
+
+  /* Black hole effect */
+  .black-hole {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, transparent 30%, rgba(0, 0, 0, 0.95) 70%);
+    opacity: 0.7;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  /* Scan lines effect */
+  .scan-lines {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(57, 255, 20, 0.2), transparent);
-  }
-  
-  .section-bg::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(57, 255, 20, 0.2), transparent);
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, 
+      rgba(0, 0, 0, 0) 50%, 
+      rgba(0, 0, 0, 0.02) 50%);
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 3;
+    opacity: 0.3;
   }
 }
 
@@ -312,40 +413,10 @@
   animation-delay: 0.6s;
 }
 
-/* Particle animations */
-.particle {
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(57, 255, 20, 0.5);
-  pointer-events: none;
-  animation: float-particle 10s infinite;
-  box-shadow: 0 0 10px 2px rgba(57, 255, 20, 0.3);
-  z-index: 2;
-}
-
-@keyframes float-particle {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-    opacity: 0.3;
-  }
-  25% {
-    transform: translate(50px, -30px) scale(1.2);
-    opacity: 0.6;
-  }
-  50% {
-    transform: translate(100px, 0) scale(0.8);
-    opacity: 0.4;
-  }
-  75% {
-    transform: translate(50px, 30px) scale(1.1);
-    opacity: 0.5;
-  }
-}
-
 /* Typing effect */
 .typing-effect {
   overflow: hidden;
-  border-right: 2px solid #39FF14;
+  border-right: 2px solid #ffffff;
   white-space: nowrap;
   animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
 }
@@ -357,7 +428,7 @@
 
 @keyframes blink-caret {
   from, to { border-color: transparent }
-  50% { border-color: #39FF14 }
+  50% { border-color: #ffffff }
 }
 
 /* Enhanced background elements */
@@ -401,25 +472,9 @@
   }
 }
 
-/* Cyberpunk scan line effect */
-.scan-lines {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, 
-    rgba(0, 0, 0, 0) 50%, 
-    rgba(0, 0, 0, 0.02) 50%);
-  background-size: 100% 4px;
-  pointer-events: none;
-  z-index: 3;
-  opacity: 0.3;
-}
-
 /* New hexagonal grid for cyberpunk look */
 .hex-grid {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill='%2339FF14' fill-opacity='0.05'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/svg%3E");
   position: absolute;
   top: 0;
   left: 0;
@@ -467,8 +522,8 @@
   width: 100%;
   height: 100%;
   background:
-    linear-gradient(90deg, rgba(57, 255, 20, 0.03) 1px, transparent 1px),
-    linear-gradient(0deg, rgba(57, 255, 20, 0.03) 1px, transparent 1px);
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
   background-size: 20px 20px;
   background-position: center center;
   z-index: -1;
