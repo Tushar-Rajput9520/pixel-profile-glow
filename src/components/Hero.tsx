@@ -20,75 +20,76 @@ const Hero = () => {
   }, [index]);
 
   useEffect(() => {
-    // Enhanced particle system with multiple layers
-    const createEnhancedParticles = () => {
+    // Ultra Enhanced particle system with more dynamic layers
+    const createUltraEnhancedParticles = () => {
       const heroSection = document.querySelector('section');
       if (heroSection) {
-        // Layer 1: Large floating particles
-        for (let i = 0; i < 15; i++) {
+        // Layer 1: Ultra large floating particles with complex movement
+        for (let i = 0; i < 20; i++) {
           const particle = document.createElement('div');
           particle.className = 'enhanced-particle-large';
-          particle.style.width = `${Math.random() * 8 + 4}px`;
+          particle.style.width = `${Math.random() * 12 + 6}px`;
           particle.style.height = particle.style.width;
           particle.style.left = `${Math.random() * 100}%`;
           particle.style.top = `${Math.random() * 100}%`;
-          particle.style.animationDelay = `${Math.random() * 8}s`;
-          particle.style.animationDuration = `${12 + Math.random() * 8}s`;
+          particle.style.animationDelay = `${Math.random() * 15}s`;
+          particle.style.animationDuration = `${15 + Math.random() * 10}s`;
           heroSection.appendChild(particle);
         }
         
-        // Layer 2: Medium particles
-        for (let i = 0; i < 25; i++) {
+        // Layer 2: Enhanced medium particles with rotation
+        for (let i = 0; i < 35; i++) {
           const particle = document.createElement('div');
           particle.className = 'enhanced-particle-medium';
-          particle.style.width = `${Math.random() * 4 + 2}px`;
+          particle.style.width = `${Math.random() * 6 + 3}px`;
+          particle.style.height = particle.style.width;
+          particle.style.left = `${Math.random() * 100}%`;
+          particle.style.top = `${Math.random() * 100}%`;
+          particle.style.animationDelay = `${Math.random() * 10}s`;
+          particle.style.animationDuration = `${10 + Math.random() * 8}s`;
+          heroSection.appendChild(particle);
+        }
+        
+        // Layer 3: Ultra small fast particles with trails
+        for (let i = 0; i < 60; i++) {
+          const particle = document.createElement('div');
+          particle.className = 'enhanced-particle-small';
+          particle.style.width = `${Math.random() * 4 + 1}px`;
           particle.style.height = particle.style.width;
           particle.style.left = `${Math.random() * 100}%`;
           particle.style.top = `${Math.random() * 100}%`;
           particle.style.animationDelay = `${Math.random() * 6}s`;
-          particle.style.animationDuration = `${8 + Math.random() * 6}s`;
-          heroSection.appendChild(particle);
-        }
-        
-        // Layer 3: Small fast particles
-        for (let i = 0; i < 40; i++) {
-          const particle = document.createElement('div');
-          particle.className = 'enhanced-particle-small';
-          particle.style.width = `${Math.random() * 3 + 1}px`;
-          particle.style.height = particle.style.width;
-          particle.style.left = `${Math.random() * 100}%`;
-          particle.style.top = `${Math.random() * 100}%`;
-          particle.style.animationDelay = `${Math.random() * 4}s`;
-          particle.style.animationDuration = `${4 + Math.random() * 4}s`;
+          particle.style.animationDuration = `${6 + Math.random() * 6}s`;
           heroSection.appendChild(particle);
         }
       }
     };
 
-    // Enhanced digital matrix rain
-    const createEnhancedDigitalRain = () => {
+    // Ultra Enhanced digital matrix rain with improved characters
+    const createUltraDigitalRain = () => {
       const heroSection = document.querySelector('section');
       if (heroSection) {
         const digitalRain = document.createElement('div');
         digitalRain.className = 'enhanced-digital-rain';
         heroSection.appendChild(digitalRain);
         
-        const characters = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン{}[]()<>+-*/=;:.,?!@#$%^&*';
+        const characters = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン{}[]()<>+-*/=;:.,?!@#$%^&*ßÇ∑´®†¥¨ˆøπåß∂ƒ©˙∆';
         
-        // Create multiple columns of falling text
-        for (let i = 0; i < 60; i++) {
+        // Create more columns with varied spacing
+        for (let i = 0; i < 80; i++) {
           const column = document.createElement('div');
           column.className = 'digital-rain-column';
-          column.style.left = `${(i / 60) * 100}%`;
-          column.style.animationDelay = `${Math.random() * 8}s`;
-          column.style.animationDuration = `${8 + Math.random() * 12}s`;
+          column.style.left = `${(i / 80) * 100}%`;
+          column.style.animationDelay = `${Math.random() * 12}s`;
+          column.style.animationDuration = `${12 + Math.random() * 15}s`;
           
-          // Add multiple characters per column
-          for (let j = 0; j < 15; j++) {
+          // Add more characters per column with varied timing
+          for (let j = 0; j < 20; j++) {
             const character = document.createElement('div');
             character.className = 'enhanced-digital-character';
             character.textContent = characters[Math.floor(Math.random() * characters.length)];
-            character.style.animationDelay = `${j * 0.1}s`;
+            character.style.animationDelay = `${j * 0.15}s`;
+            character.style.animationDuration = `${3 + Math.random() * 3}s`;
             column.appendChild(character);
           }
           
@@ -97,83 +98,85 @@ const Hero = () => {
       }
     };
 
-    // Enhanced circuit network
-    const createCircuitNetwork = () => {
+    // Ultra Enhanced circuit network with complex patterns
+    const createUltraCircuitNetwork = () => {
       const heroSection = document.querySelector('section');
       if (heroSection) {
         const circuitNetwork = document.createElement('div');
         circuitNetwork.className = 'circuit-network';
         heroSection.appendChild(circuitNetwork);
         
-        // Create interconnected circuit lines
-        for (let i = 0; i < 20; i++) {
+        // Create more interconnected circuit lines with varied patterns
+        for (let i = 0; i < 30; i++) {
           const circuit = document.createElement('div');
           circuit.className = 'circuit-line';
           circuit.style.left = `${Math.random() * 100}%`;
           circuit.style.top = `${Math.random() * 100}%`;
-          circuit.style.width = `${50 + Math.random() * 200}px`;
+          circuit.style.width = `${80 + Math.random() * 300}px`;
           circuit.style.transform = `rotate(${Math.random() * 360}deg)`;
-          circuit.style.animationDelay = `${Math.random() * 6}s`;
+          circuit.style.animationDelay = `${Math.random() * 8}s`;
+          circuit.style.animationDuration = `${6 + Math.random() * 6}s`;
           circuitNetwork.appendChild(circuit);
         }
         
-        // Add circuit nodes
-        for (let i = 0; i < 15; i++) {
+        // Add more circuit nodes with enhanced effects
+        for (let i = 0; i < 25; i++) {
           const node = document.createElement('div');
           node.className = 'circuit-node';
           node.style.left = `${Math.random() * 100}%`;
           node.style.top = `${Math.random() * 100}%`;
-          node.style.animationDelay = `${Math.random() * 4}s`;
+          node.style.animationDelay = `${Math.random() * 6}s`;
+          node.style.animationDuration = `${3 + Math.random() * 3}s`;
           circuitNetwork.appendChild(node);
         }
       }
     };
 
-    // Enhanced energy waves
-    const createEnergyWaves = () => {
+    // Ultra Enhanced energy waves with more complexity
+    const createUltraEnergyWaves = () => {
       const heroSection = document.querySelector('section');
       if (heroSection) {
         const waveContainer = document.createElement('div');
         waveContainer.className = 'energy-waves';
         heroSection.appendChild(waveContainer);
         
-        for (let i = 0; i < 8; i++) {
+        for (let i = 0; i < 12; i++) {
           const wave = document.createElement('div');
           wave.className = 'energy-wave';
           wave.style.animationDelay = `${i * 0.5}s`;
-          wave.style.animationDuration = `${4 + i * 0.5}s`;
+          wave.style.animationDuration = `${6 + i * 0.5}s`;
           waveContainer.appendChild(wave);
         }
       }
     };
 
-    // Data streams
-    const createDataStreams = () => {
+    // Ultra Enhanced data streams with improved flow
+    const createUltraDataStreams = () => {
       const heroSection = document.querySelector('section');
       if (heroSection) {
         const streamContainer = document.createElement('div');
         streamContainer.className = 'data-streams';
         heroSection.appendChild(streamContainer);
         
-        for (let i = 0; i < 12; i++) {
+        for (let i = 0; i < 18; i++) {
           const stream = document.createElement('div');
           stream.className = 'data-stream';
           stream.style.left = `${Math.random() * 100}%`;
-          stream.style.animationDelay = `${Math.random() * 6}s`;
-          stream.style.animationDuration = `${6 + Math.random() * 4}s`;
+          stream.style.animationDelay = `${Math.random() * 8}s`;
+          stream.style.animationDuration = `${8 + Math.random() * 6}s`;
           streamContainer.appendChild(stream);
         }
       }
     };
 
-    createEnhancedParticles();
-    createEnhancedDigitalRain();
-    createCircuitNetwork();
-    createEnergyWaves();
-    createDataStreams();
+    createUltraEnhancedParticles();
+    createUltraDigitalRain();
+    createUltraCircuitNetwork();
+    createUltraEnergyWaves();
+    createUltraDataStreams();
     
     return () => {
-      // Cleanup
+      // Enhanced cleanup
       const elementsToRemove = [
         '.enhanced-particle-large', '.enhanced-particle-medium', '.enhanced-particle-small',
         '.enhanced-digital-rain', '.circuit-network', '.energy-waves', '.data-streams'
@@ -198,15 +201,15 @@ const Hero = () => {
 
   return (
     <section className="min-h-screen pt-24 pb-16 flex items-center relative overflow-hidden enhanced-black-bg">
-      {/* Enhanced background layers */}
+      {/* Ultra Enhanced background layers with more depth */}
       <div className="absolute inset-0 enhanced-gradient-bg"></div>
       <div className="absolute inset-0 enhanced-grid-pattern"></div>
       <div className="absolute inset-0 enhanced-noise-overlay"></div>
       
-      {/* Enhanced scan lines */}
+      {/* Ultra Enhanced scan lines with multiple directions */}
       <div className="enhanced-scan-lines"></div>
       
-      {/* Ambient lighting effects */}
+      {/* Enhanced ambient lighting effects with more variety */}
       <div className="ambient-glow-top"></div>
       <div className="ambient-glow-bottom"></div>
 
