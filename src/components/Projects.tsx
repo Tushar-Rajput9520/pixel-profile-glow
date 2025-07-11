@@ -37,46 +37,23 @@ const Projects = () => {
 
   const projects: Project[] = [
     {
-      id: 1,
-      title: 'Investax',
-      description: 'A Zerodha-inspired trading platform with real-time market data and user-friendly dashboard for investment tracking and analysis.',
-      techStack: ['Python', 'Flask', 'SQLAlchemy', 'Pandas', 'Matplotlib'],
-      image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=2070&auto=format&fit=crop',
-      demoUrl: '#',
-      githubUrl: '#',
-      demoContent: (
-        <div className="bg-gray-900 p-4 rounded-lg">
-          <h3 className="text-neonGreen text-xl mb-4">Investax Live Demo</h3>
-          <p className="text-gray-300 mb-4">This is an interactive demo of the Investax trading platform.</p>
-          <div className="bg-gray-800 p-4 rounded-lg">
-            <pre className="text-gray-300 text-sm overflow-x-auto">
-              {'# Sample Python trading dashboard using Flask\n' +
-              'from flask import Flask, render_template\n' +
-              'import pandas as pd\n' +
-              'import matplotlib.pyplot as plt\n\n' +
-              'app = Flask(__name__)\n\n' +
-              '@app.route("/")\n' +
-              'def dashboard():\n' +
-              '    # Get market data using pandas\n' +
-              '    data = pd.read_csv("market_data.csv")\n' +
-              '    # Process and visualize data\n' +
-              '    return render_template("dashboard.html", data=data)\n\n' +
-              'if __name__ == "__main__":\n' +
-              '    app.run(debug=True)'}
-            </pre>
-          </div>
-        </div>
-      ),
-      codeSnippet: '# Investax Trading Platform\n\nimport pandas as pd\nimport numpy as np\nfrom flask import Flask, render_template, request, jsonify\nfrom flask_sqlalchemy import SQLAlchemy\nfrom matplotlib import pyplot as plt\nimport plotly.express as px\n\napp = Flask(__name__)\napp.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///investax.db"\ndb = SQLAlchemy(app)\n\nclass User(db.Model):\n    id = db.Column(db.Integer, primary_key=True)\n    username = db.Column(db.String(80), unique=True, nullable=False)\n    email = db.Column(db.String(120), unique=True, nullable=False)\n    portfolio = db.relationship("Portfolio", backref="owner", lazy=True)\n\nclass Portfolio(db.Model):\n    id = db.Column(db.Integer, primary_key=True)\n    stock_symbol = db.Column(db.String(10), nullable=False)\n    quantity = db.Column(db.Integer, nullable=False)\n    purchase_price = db.Column(db.Float, nullable=False)\n    user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)\n\n@app.route("/")\ndef dashboard():\n    return render_template("dashboard.html")\n\n@app.route("/api/market-data")\ndef get_market_data():\n    # Fetch market data using pandas\n    data = pd.read_csv("market_data.csv")\n    return jsonify(data.to_dict())\n\nif __name__ == "__main__":\n    app.run(debug=True)',
+      title: "StayBooking - Stay Smarter book smarter",
+      description: "A comprehensive hotel booking platform with user authentication, room management, booking system, and admin dashboard. Features real-time availability, payment integration, and responsive design for seamless user experience.",
+      image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80",
+      technologies: ["React", "Node.js", "MongoDB", "Express", "Material-UI","javaScript"],
+      liveUrl: "https://mystaybooking-cms7.onrender.com/",
+      githubUrl: "https://github.com/Tushar-Rajput9520/StayBooking",
+      featured: true,
+      year: "2024"
     },
     {
       id: 2,
       title: 'Wanderlust',
       description: 'A travel planning application that helps users discover destinations, create itineraries, and share travel experiences with others.',
-      techStack: ['Python', 'Django', 'PostgreSQL', 'Bootstrap', 'Leaflet.js'],
+      techStack:  ["React", "Node.js", "MongoDB", "Express", "Material-UI","javaScript"],
       image: 'https://images.unsplash.com/photo-1500673922987-e212871fec22?q=80&w=2000&auto=format&fit=crop',
-      demoUrl: '#',
-      githubUrl: '#',
+      demoUrl: 'wanderlust-002.onrender.com',
+      githubUrl: 'https://github.com/Tushar-Rajput9520/WANDERLUST',
       demoContent: (
         <div className="bg-gray-900 p-4 rounded-lg">
           <h3 className="text-neonGreen text-xl mb-4">Wanderlust Travel App Demo</h3>
@@ -107,8 +84,8 @@ const Projects = () => {
       description: 'A full-featured e-commerce platform replicating Myntra\'s design and functionality with responsive UI and comprehensive product catalog.',
       techStack: ['Python', 'Django', 'HTML', 'CSS', 'JavaScript', 'PostgreSQL'],
       image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2000&auto=format&fit=crop',
-      demoUrl: '#',
-      githubUrl: '#',
+      demoUrl: 'https://github.com/Tushar-Rajput9520/mytra-clone-project',
+      githubUrl: 'https://github.com/Tushar-Rajput9520/mytra-clone-project',
       demoContent: (
         <div className="bg-gray-900 p-4 rounded-lg">
           <h3 className="text-neonGreen text-xl mb-4">Myntra Clone Demo</h3>
@@ -138,94 +115,155 @@ const Projects = () => {
       ),
       codeSnippet: '# Myntra Clone E-commerce Models\n\nfrom django.db import models\nfrom django.contrib.auth.models import User\n\nclass Category(models.Model):\n    name = models.CharField(max_length=100)\n    slug = models.SlugField(unique=True)\n    parent = models.ForeignKey("self", null=True, blank=True, on_delete=models.CASCADE, related_name="children")\n    \n    def __str__(self):\n        return self.name\n    \n    class Meta:\n        verbose_name_plural = "Categories"\n\nclass Brand(models.Model):\n    name = models.CharField(max_length=100)\n    slug = models.SlugField(unique=True)\n    logo = models.ImageField(upload_to="brands", blank=True, null=True)\n    \n    def __str__(self):\n        return self.name\n\nclass Product(models.Model):\n    name = models.CharField(max_length=200)\n    slug = models.SlugField(unique=True)\n    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="products")\n    brand = models.ForeignKey(Brand, on_delete=models.CASCADE, related_name="products")\n    description = models.TextField()\n    price = models.DecimalField(max_digits=10, decimal_places=2)\n    sale_price = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)\n    is_available = models.BooleanField(default=True)\n    created_at = models.DateTimeField(auto_now_add=True)\n    updated_at = models.DateTimeField(auto_now=True)\n    \n    def __str__(self):\n        return self.name\n    \n    @property\n    def discount_percentage(self):\n        if self.sale_price:\n            return int(((self.price - self.sale_price) / self.price) * 100)\n        return 0\n\nclass ProductImage(models.Model):\n    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="images")\n    image = models.ImageField(upload_to="products")\n    is_featured = models.BooleanField(default=False)\n    \n    def __str__(self):\n        return f"Image for {self.product.name}"',
     },
+   {
+  id: 5,
+  title: 'React Password Generator',
+  description: 'A secure and customizable password generator built with React that lets users choose length, character types, and instantly copy results.',
+  techStack: ['React', 'JavaScript', 'Tailwind CSS', 'HTML/CSS'],
+  image: 'https://images.unsplash.com/photo-1611617772998-e4eaae4b3ad9?q=80&w=2070&auto=format&fit=crop',
+  demoUrl: 'password-generator-tushar.vercel.app',
+  githubUrl: 'https://github.com/Tushar-Rajput9520/Password-Generator',
+  demoContent: (
+    <div className="bg-gray-900 p-4 rounded-lg">
+      <h3 className="text-neonGreen text-xl mb-4">React Password Generator Demo</h3>
+      <p className="text-gray-300 mb-4">Generate strong, secure, and customizable passwords in real-time.</p>
+      <div className="bg-gray-800 p-4 rounded-lg">
+        <pre className="text-gray-300 text-sm overflow-x-auto">
+{`import React, { useState } from 'react';
+
+const PasswordGenerator = () => {
+  const [length, setLength] = useState(12);
+  const [password, setPassword] = useState('');
+  const [includeSymbols, setIncludeSymbols] = useState(true);
+  const [includeNumbers, setIncludeNumbers] = useState(true);
+  const [includeUppercase, setIncludeUppercase] = useState(true);
+  const [includeLowercase, setIncludeLowercase] = useState(true);
+
+  const generatePassword = () => {
+    let chars = '';
+    if (includeSymbols) chars += '!@#$%^&*()_+';
+    if (includeNumbers) chars += '0123456789';
+    if (includeUppercase) chars += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    if (includeLowercase) chars += 'abcdefghijklmnopqrstuvwxyz';
+
+    let newPassword = '';
+    for (let i = 0; i < length; i++) {
+      newPassword += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    setPassword(newPassword);
+  };
+
+  return (
+    <div className="bg-gray-900 p-6 rounded-lg text-white">
+      <h2 className="text-xl mb-4">Password Generator</h2>
+      <input
+        type="number"
+        value={length}
+        onChange={(e) => setLength(e.target.value)}
+        className="bg-gray-700 p-2 rounded mb-2 w-full"
+      />
+      <div className="mb-2 flex flex-col gap-1">
+        <label><input type="checkbox" checked={includeSymbols} onChange={() => setIncludeSymbols(!includeSymbols)} /> Symbols</label>
+        <label><input type="checkbox" checked={includeNumbers} onChange={() => setIncludeNumbers(!includeNumbers)} /> Numbers</label>
+        <label><input type="checkbox" checked={includeUppercase} onChange={() => setIncludeUppercase(!includeUppercase)} /> Uppercase</label>
+        <label><input type="checkbox" checked={includeLowercase} onChange={() => setIncludeLowercase(!includeLowercase)} /> Lowercase</label>
+      </div>
+      <button onClick={generatePassword} className="bg-green-500 text-white p-2 rounded mb-4">Generate</button>
+      <div className="bg-gray-700 p-2 rounded">{password}</div>
+    </div>
+  );
+};
+
+export default PasswordGenerator;`}
+        </pre>
+      </div>
+    </div>
+  ),
+  codeSnippet: `// React Password Generator
+
+import React, { useState } from 'react';
+
+const PasswordGenerator = () => {
+  const [length, setLength] = useState(12);
+  const [password, setPassword] = useState('');
+  const [includeSymbols, setIncludeSymbols] = useState(true);
+  const [includeNumbers, setIncludeNumbers] = useState(true);
+  const [includeUppercase, setIncludeUppercase] = useState(true);
+  const [includeLowercase, setIncludeLowercase] = useState(true);
+
+  const generatePassword = () => {
+    let chars = '';
+    if (includeSymbols) chars += '!@#$%^&*()_+';
+    if (includeNumbers) chars += '0123456789';
+    if (includeUppercase) chars += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    if (includeLowercase) chars += 'abcdefghijklmnopqrstuvwxyz';
+
+    let newPassword = '';
+    for (let i = 0; i < length; i++) {
+      newPassword += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    setPassword(newPassword);
+  };
+
+  return (
+    <div>
+      <input type="number" value={length} onChange={(e) => setLength(e.target.value)} />
+      <label><input type="checkbox" checked={includeSymbols} onChange={() => setIncludeSymbols(!includeSymbols)} /> Symbols</label>
+      <label><input type="checkbox" checked={includeNumbers} onChange={() => setIncludeNumbers(!includeNumbers)} /> Numbers</label>
+      <label><input type="checkbox" checked={includeUppercase} onChange={() => setIncludeUppercase(!includeUppercase)} /> Uppercase</label>
+      <label><input type="checkbox" checked={includeLowercase} onChange={() => setIncludeLowercase(!includeLowercase)} /> Lowercase</label>
+      <button onClick={generatePassword}>Generate</button>
+      <p>{password}</p>
+    </div>
+  );
+};
+
+export default PasswordGenerator;`,
+},
     {
-      id: 4,
-      title: 'Zara AI Assistant',
-      description: 'An intelligent conversational AI assistant with natural language processing, context awareness, and personalized interaction capabilities.',
-      techStack: ['Python', 'Flask', 'NLTK', 'TensorFlow', 'spaCy', 'HTML/CSS'],
-      image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=2070&auto=format&fit=crop',
-      demoUrl: '#',
-      githubUrl: '#',
-      demoContent: (
-        <div className="bg-gray-900 p-4 rounded-lg">
-          <h3 className="text-neonGreen text-xl mb-4">Zara AI Assistant Demo</h3>
-          <p className="text-gray-300 mb-4">Natural language processing chatbot built with Python and TensorFlow.</p>
-          <div className="bg-gray-800 p-4 rounded-lg">
-            <pre className="text-gray-300 text-sm overflow-x-auto">
-              {'import nltk\n' +
-              'import numpy as np\n' +
-              'import tensorflow as tf\n' +
-              'from tensorflow.keras.models import Sequential\n' +
-              'from tensorflow.keras.layers import Dense, Dropout\n\n' +
-              '# Load and preprocess dataset\n' +
-              'def preprocess_data(intents):\n' +
-              '    words = []\n' +
-              '    classes = []\n' +
-              '    documents = []\n' +
-              '    for intent in intents["intents"]:\n' +
-              '        for pattern in intent["patterns"]:\n' +
-              '            # Tokenize words\n' +
-              '            w = nltk.word_tokenize(pattern)\n' +
-              '            words.extend(w)\n' +
-              '            documents.append((w, intent["tag"]))\n' +
-              '            if intent["tag"] not in classes:\n' +
-              '                classes.append(intent["tag"])\n' +
-              '    return words, classes, documents'}
-            </pre>
-          </div>
-        </div>
-      ),
-      codeSnippet: '# Zara AI Assistant - NLP Chatbot\n\nimport numpy as np\nimport tensorflow as tf\nimport random\nimport json\nimport nltk\nfrom nltk.stem import WordNetLemmatizer\nfrom tensorflow.keras.models import Sequential\nfrom tensorflow.keras.layers import Dense, Dropout\nfrom tensorflow.keras.optimizers import SGD\nfrom flask import Flask, request, jsonify, render_template\n\n# Initialize lemmatizer\nlemmatizer = WordNetLemmatizer()\n\n# Load intents file\nwith open("intents.json") as file:\n    data = json.load(file)\n\n# Prepare training data\nwords = []\nclasses = []\ndocuments = []\nignore_words = ["?", "!", ".", ",", ";"]\n\nfor intent in data["intents"]:\n    for pattern in intent["patterns"]:\n        # Tokenize each word\n        w = nltk.word_tokenize(pattern)\n        words.extend(w)\n        # Add documents to the corpus\n        documents.append((w, intent["tag"]))\n        # Add to our classes list\n        if intent["tag"] not in classes:\n            classes.append(intent["tag"])\n\n# Lemmatize, lowercase and remove duplicates\nwords = [lemmatizer.lemmatize(w.lower()) for w in words if w not in ignore_words]\nwords = sorted(list(set(words)))\nclasses = sorted(list(set(classes)))\n\n# Create our training data\ntraining = []\noutput_empty = [0] * len(classes)\n\n# Create bag of words for each sentence\nfor doc in documents:\n    bag = []\n    pattern_words = doc[0]\n    pattern_words = [lemmatizer.lemmatize(word.lower()) for word in pattern_words]\n    \n    for w in words:\n        bag.append(1) if w in pattern_words else bag.append(0)\n    \n    # Output is a "0" for each tag and "1" for current tag\n    output_row = list(output_empty)\n    output_row[classes.index(doc[1])] = 1\n    \n    training.append([bag, output_row])\n\n# Shuffle and convert to numpy array\nrandom.shuffle(training)\ntraining = np.array(training, dtype=object)\n\n# Create train and test lists\ntrain_x = list(training[:, 0])\ntrain_y = list(training[:, 1])\n\n# Build neural network model\nmodel = Sequential()\nmodel.add(Dense(128, input_shape=(len(train_x[0]),), activation="relu"))\nmodel.add(Dropout(0.5))\nmodel.add(Dense(64, activation="relu"))\nmodel.add(Dropout(0.5))\nmodel.add(Dense(len(train_y[0]), activation="softmax"))\n\n# Compile model\nsgd = SGD(learning_rate=0.01, momentum=0.9, nesterov=True)\nmodel.compile(loss="categorical_crossentropy", optimizer=sgd, metrics=["accuracy"])\n\n# Train and save model\nhist = model.fit(np.array(train_x), np.array(train_y), epochs=200, batch_size=5, verbose=1)\nmodel.save("chatbot_model.h5")',
-    },
-    {
-      id: 5,
-      title: 'Digital Lock',
-      description: 'A secure digital lock interface with PIN pad, animation effects, and validation feedback. Includes customizable security settings.',
-      techStack: ['HTML', 'CSS', 'JavaScript', 'Python', 'Flask'],
-      image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?q=80&w=2000&auto=format&fit=crop',
-      demoUrl: '#',
-      githubUrl: '#',
-      demoContent: (
-        <div className="bg-gray-900 p-4 rounded-lg">
-          <h3 className="text-neonGreen text-xl mb-4">Digital Lock Demo</h3>
-          <p className="text-gray-300 mb-4">Secure PIN pad interface with animation effects.</p>
-          <div className="bg-gray-800 p-4 rounded-lg">
-            <pre className="text-gray-300 text-sm overflow-x-auto">
-              {'<!DOCTYPE html>\n' +
-              '<html lang="en">\n' +
-              '<head>\n' +
-              '  <meta charset="UTF-8">\n' +
-              '  <meta name="viewport" content="width=device-width, initial-scale=1.0">\n' +
-              '  <title>Digital Lock</title>\n' +
-              '  <link rel="stylesheet" href="styles.css">\n' +
-              '</head>\n' +
-              '<body>\n' +
-              '  <div class="lock-container">\n' +
-              '    <div class="display">****</div>\n' +
-              '    <div class="keypad">\n' +
-              '      <button class="key">1</button>\n' +
-              '      <button class="key">2</button>\n' +
-              '      <button class="key">3</button>\n' +
-              '      <button class="key">4</button>\n' +
-              '      <button class="key">5</button>\n' +
-              '      <button class="key">6</button>\n' +
-              '      <button class="key">7</button>\n' +
-              '      <button class="key">8</button>\n' +
-              '      <button class="key">9</button>\n' +
-              '      <button class="key clear">C</button>\n' +
-              '      <button class="key">0</button>\n' +
-              '      <button class="key enter">✓</button>\n' +
-              '    </div>\n' +
-              '  </div>\n' +
-              '  <script src="script.js"></script>\n' +
-              '</body>\n' +
-              '</html>'}
-            </pre>
-          </div>
-        </div>
-      ),
-      codeSnippet: '# Digital Lock - Server-side implementation with Flask\n\nfrom flask import Flask, render_template, request, jsonify\nimport hashlib\nimport os\nfrom datetime import datetime\n\napp = Flask(__name__)\napp.config["SECRET_KEY"] = os.urandom(24)\n\n# In a real app, this would be in a database\nUSERS = {\n    "admin": {\n        "pin_hash": "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918",  # admin\n        "failed_attempts": 0,\n        "last_attempt": None,\n        "locked_until": None\n    }\n}\n\n@app.route("/")\ndef index():\n    return render_template("index.html")\n\n@app.route("/verify-pin", methods=["POST"])\ndef verify_pin():\n    data = request.get_json()\n    username = data.get("username", "admin")\n    pin = data.get("pin")\n    \n    user = USERS.get(username)\n    if not user:\n        return jsonify({"success": False, "message": "User not found"}), 404\n    \n    # Check if account is locked\n    if user["locked_until"] and datetime.now() < user["locked_until"]:\n        return jsonify({\n            "success": False, \n            "message": "Account locked. Try again later."\n        }), 403\n    \n    # Verify PIN\n    pin_hash = hashlib.sha256(pin.encode()).hexdigest()\n    if pin_hash == user["pin_hash"]:\n        # Reset failed attempts on success\n        user["failed_attempts"] = 0\n        user["last_attempt"] = datetime.now()\n        return jsonify({"success": True, "message": "PIN accepted"})\n    else:\n        # Increment failed attempts\n        user["failed_attempts"] += 1\n        user["last_attempt"] = datetime.now()\n        \n        # Lock account after 3 failed attempts\n        if user["failed_attempts"] >= 3:\n            user["locked_until"] = datetime.now() + datetime.timedelta(minutes=15)\n            return jsonify({\n                "success": False,\n                "message": "Account locked for 15 minutes due to multiple failed attempts."\n            }), 403\n        \n        return jsonify({\n            "success": False,\n            "message": f"Invalid PIN. {3 - user[\"failed_attempts\"]} attempts remaining."\n        }), 401\n\nif __name__ == "__main__":\n    app.run(debug=True)',
-    },
+  id: 5,
+  title: 'Currency Converter',
+  description: 'A real-time currency converter built using React that fetches live exchange rates and allows users to convert between multiple currencies with ease.',
+  techStack: ['React', 'JavaScript', 'REST API (ExchangeRate API)', 'Tailwind CSS', 'HTML/CSS'],
+  image: 'https://images.unsplash.com/photo-1611979032544-2b7e90d6b2cc?q=80&w=2070&auto=format&fit=crop',
+  demoUrl: '#',
+  githubUrl: '#',
+  demoContent: (
+    <div className="bg-gray-900 p-4 rounded-lg">
+      <h3 className="text-neonGreen text-xl mb-4">Currency Converter Demo</h3>
+      <p className="text-gray-300 mb-4">Convert currencies using live exchange rates fetched from a REST API.</p>
+      <div className="bg-gray-800 p-4 rounded-lg">
+        <pre className="text-gray-300 text-sm overflow-x-auto">
+{`// Fetch exchange rates and calculate conversion
+useEffect(() => {
+  fetch('https://api.exchangerate-api.com/v4/latest/USD')
+    .then(res => res.json())
+    .then(data => {
+      setRates(data.rates);
+    });
+}, []);
+
+// Convert amount from one currency to another
+const convert = () => {
+  const rate = rates[toCurrency] / rates[fromCurrency];
+  setResult((amount * rate).toFixed(2));
+};`}
+        </pre>
+      </div>
+    </div>
+  ),
+  codeSnippet: `// React Currency Converter - Logic Overview
+
+- Fetch exchange rates from a free currency API
+- Use React state to manage amount, fromCurrency, toCurrency
+- Calculate converted value using (amount × toRate / fromRate)
+- Display conversion result in real-time
+- Use dropdowns for currency selection and input for amount
+- Optionally add a copy or swap button`,
+}
+
+
+  
     {
       id: 6,
       title: 'Movie Finder',
